@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OOP</title>
+</head>
+
+<body>
+  <script>
+    /* Using a procedural style (NOT OBJECT ORIENTED) of programming, create some code for a little radio. It should do the following: */
+
+    // Have a variable to keep track of what station its currently on
+    let currentStation = '93.9 Kool FM'
+
+    // Have a variable that keeps track of whether it is on or off
+    let isRadioOn = false
+
+    // Have a function to change the radio station
+    const changeRadioStation = stationName => {
+      let oldStation = currentStation
+      currentStation = stationName
+      console.log(`You were listening to ${oldStation}, now you're listening to ${stationName}`)
+    }
+
+    // Have a function to play the radio - when you run it, it should say "You're listening to {radio station name}"
+    const playRadio = () => {
+      if (isRadionOn === false) {
+        console.log('Turn on the radio first.')
+      } else {
+        console.log(`You're listening to ${currentStation}.`)
+      }
+    }
+
+    // Have a function to turn on the radio - if the radio is already on, it will tell you that the radio is already on
+    const turnOnRadio = () => {
+      if (isRadioOn === true) {
+        console.log('The radio is already on!')
+      } else {
+        isRadioOn = true
+        console.log('The radio is now on.')
+      }
+    }
+
+    const radio = {
+      currentStation: '93.9 Kool FM',
+      isOn: false,
+      changeStation: (stationName) => {
+        let oldStation = this.currentStation
+        this.currentStation = stationName
+        console.log(`You were listening to ${oldStation}, now you're listening to ${this.currentStation}`)
+      },
+      play: function () {
+        if (this.isOn === false) {
+          console.log('Turn on the radio first.')
+        } else {
+          console.log(`You're listening to ${this.currentStation}.`)
+        }
+      },
+      turnOn: () => {
+        if (this.isOn === true) {
+          console.log('The radio is already on!')
+        } else {
+          this.isOn = true
+          console.log('The radio is now on.')
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

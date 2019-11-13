@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DVD Player</title>
+</head>
+
+<body>
+  <script>
+    const dvdPlayer = {
+      currentDvd: undefined,
+      isPlaying: false,
+      playPause: function () {
+        if (this.currentDvd === undefined) {
+          return console.log('Please insert a DVD first.')
+        }
+
+        if (this.isPlaying) {
+          this.isPlaying = false
+          return console.log(`Pausing ${this.currentDvd}`)
+        }
+
+        this.isPlaying = true
+        console.log(`Now playing ${this.currentDvd}`)
+      },
+      eject: function () {
+        if (this.currentDvd !== undefined) {
+          console.log(`Ejecting ${this.currentDvd}...`)
+          this.currentDvd = undefined
+        }
+      },
+      load: function (dvdName) {
+        this.eject()
+        console.log(`Loading ${dvdName}...`)
+        this.currentDvd = dvdName
+        console.log(`${this.currentDvd} is now loaded.`)
+      }
+    } 
+  </script>
+</body>
+
+</html>
