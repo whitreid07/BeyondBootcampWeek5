@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Warrior</title>
+</head>
+
+<body>
+  <script>
+    //     Create an object that represents a "warrior".This warrior has the following properties:
+
+    //     STEP ONE:
+
+    //     equipment, an array containing the values "sword" and "shield".
+    //     energy, defaults to the number 100
+    //     location, an object with two properties: x and y.The values of x and y are numeric.
+    //     a method walk() which updates the warrior's location. If the warrior's location is x: 10 and y: 5 then walk(2, 0) will update the location to x: 12 and y: 5.
+    //     a method strike() which uses up energy.If the warrior's energy is at 100 then strike(25) will reduce the energy to 75.
+    //     a method pickUpEquipment() which adds the argument(a string) to the equipment array.
+
+    //     STEP TWO:
+
+    //     make it so that you can pass in a custom name for the warrior, and give it a shout method so that it can shout its own name
+    //     make it so that you can pass in starting equipment for the warrior
+    //     make it so that you can pass in a starting energy level for the warior
+    //     make it so that you can pass in a starting location for the warrior
+
+    function Warrior(
+
+      name = 'Franchelio',
+
+      equipment = ['a orange popsicle', 'fear itself'],
+
+      energy = 100,
+
+      location = { x: 0, y: 0 }
+
+    ) {
+
+      // make it so that you can pass in a custom name for the warrior
+
+      this.name = name
+
+      // equipment, an array containing the values "sword" and "shield".
+
+      this.equipment = equipment
+
+      // energy, defaults to the number 100
+
+      this.energy = energy
+
+      // location, an object with two properties: x and y. The values of x and y are numeric.
+
+      this.location = location
+
+    }
+
+    Warrior.prototype.walk = function (x, y) {
+
+      // a method walk() which updates the warrior's location. If the warrior's location is x:10 and y:5 then walk(2, 0) will update the location to x:12 and y:5.
+
+      this.location = { x: this.x + x, y: this.y + y } // es6 lazyness aka shorthand
+
+    }
+
+    Warrior.prototype.strike = function (energy) {
+
+      // a method strike() which uses up energy. If the warrior's energy is at 100 then strike(25) will reduce the energy to 75.
+
+      this.energy = this.energy - energy
+
+    }
+
+    Warrior.prototype.pickUpEquipment = function (equipment) {
+
+      // a method pickUpEquipment() which adds the argument (a string) to the equipment array.
+
+      this.equipment.push(equipment)
+
+    }
+
+    Warrior.prototype.shout = function () {
+
+      console.log(`I AM ${this.name.toUpperCase()}!!!!!!!`)
+
+    }
+
+    const shirley = new Warrior('Shirley')
+
+
+
+  </script>
+
+</body>
+
+</html>

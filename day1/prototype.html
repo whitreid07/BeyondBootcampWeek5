@@ -13,9 +13,11 @@
     const Person = function (name) {
       // Implicity returning an object (aka instance)
       this.name = name
-      this.greet = function () {
-        console.log(`Hello, my name is ${this.name}!`)
-      }
+
+    }
+
+    this.greet = function () {
+      console.log(`Hello, my name is ${this.name}!`)
     }
 
     // The new keyword does two things:

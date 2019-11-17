@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animals with OOP</title>
+</head>
+
+<body>
+  <script>
+    // 1. Create an Animal construcor
+    const Animal = function (species, energy) { // this is function signature 
+      // stateful: energy, species
+      // 2. Make it so that the animal has an energy level
+      this.energy = energy
+
+      // 3. Make it so that we can provide a species to the animal
+      this.species = species
+    }
+    // 4. Make it so the animal can run. Running depletes its energy 
+    Animal.prototype.run = function (amount) {
+      this.energy = this.energy - amount
+    }
+
+    // 5. Make it so that the animal can eat. Eating increases its energy
+    Animal.prototype.eat = function (food) {
+      this.energy = this.energy + food
+    }
+
+    const gary = new Animal('giraffe', 35)
+    const rocky = new Animal('raccoon', 100)
+  </script>
+
+</body>
+
+</html>
